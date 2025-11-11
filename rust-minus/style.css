@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: orange;
+    background-image: url('./images/rust-login.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #ccc;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: end;
+    gap: 16px;
+    padding: 16px;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.footer {
+    padding: 16px;
+    text-align: center;
+}
