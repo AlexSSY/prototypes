@@ -8,15 +8,30 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <span class="material-icons">light_mode</span>
-        <span class="material-icons">settings</span>
-    </header>
-    <main class=main></main>
-    <footer class="footer">
-        <p>Mlunu industries (c)</p>
-    </footer>
+    <form action="#">
+        <h1>Login</h1>
+        <div class="input-field">
+            <input type="text" name="username" placeholder="Username" required />
+            <span class="material-icons">account_circle</span>
+        </div>
+        <div class="input-field">
+            <input type="password" name="password" placeholder="Password" required />
+            <span class="material-icons">lock</span>
+        </div>
+        <div class="remember-forgot">
+            <label for="remember">
+                <input type="checkbox" name="remember" id="remember">
+                Remember Me
+            </label>
+            <a href="#">Forgot Password?</a>
+        </div>
+        <button class="button">Submit</button>
+        <p class="register">
+            Don't have an account? <a href="#">Register</a>
+        </p>
+    </form>
 </body>
 </html>
