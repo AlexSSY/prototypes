@@ -9,10 +9,9 @@
 /* htmlcolorcodes.com #F54927 */
 
 :root {
-    --text-color-sprimary: #eee;
-    --text-color-secondary: #999;
     --sidebar-bg-color: #180508;
-    --sidebar-text-color: #eee;
+    --sidebar-text-color: #ccc;
+    --sidebar-primary: #F54927;
 }
 
 .material-symbols-outlined {
@@ -32,6 +31,7 @@
     height: 200vh;
     margin: 0 0 0 250px;
     padding: 0 12px;
+    transition: margin-left 0.2s ease-in-out;
 }
 
 .sidebar {
@@ -43,6 +43,8 @@
     top: 0;
     z-index: 1;
     padding: 24px 20px;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
 }
 
 .sidebar-header {
@@ -55,17 +57,23 @@
     font-size: 21px;
     font-weight: 600;
     user-select: none;
-    color: var(--sidebar-text-color)
+    color: var(--sidebar-text-color);
+    white-space: nowrap;
 }
 
 .sidebar-header__toggler {
     font-size: 24px;
-    color: var(--sidebar-bg-color);
-    background-color: var(--sidebar-text-color);
-    padding: 4px;
+    color: var(--sidebar-text-color);
+    padding: 2px;
+    border: 2px solid var(--sidebar-text-color);
     border-radius: 6px;
     user-select: none;
     cursor: pointer;
+}
+
+.sidebar-header__toggler:hover {
+    color: var(--sidebar-bg-color);
+    background-color: var(--sidebar-text-color);
 }
 
 .sidebar.collapsed {
@@ -74,6 +82,7 @@
 
 .sidebar.collapsed .sidebar-header__title {
     display: none;
+    opacity: 0;
 }
 
 .sidebar.collapsed ~ .main-content {
@@ -93,5 +102,59 @@
 }
 
 .sidebar.collapsed .toggler-left {
+    display: none;
+}
+
+.sidebar-main {
+    margin-top: 36px;
+}
+
+.sidebar-menu {
+    list-style: none;
+}
+
+.sidebar-menu__item {
+    margin: 8px 0;
+}
+
+.sidebar-menu__item a{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    padding: 4px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.sidebar-menu__item:hover a{
+    background-color: var(--sidebar-text-color);
+}
+
+.sidebar-menu__item span {
+    color: var(--sidebar-text-color);
+}
+
+.sidebar-menu__label {
+    color: var(--sidebar-text-color)
+}
+
+.sidebar-menu__item.active .sidebar-menu__label{
+    color: var(--sidebar-primary);
+}
+
+.sidebar-menu__item.active span{
+    color: var(--sidebar-primary);
+}
+
+.sidebar-menu__item:hover .sidebar-menu__label {
+    color: var(--sidebar-bg-color);
+}
+
+.sidebar-menu__item:hover span {
+    color: var(--sidebar-bg-color);
+}
+
+.sidebar.collapsed .sidebar-menu__label {
     display: none;
 }
